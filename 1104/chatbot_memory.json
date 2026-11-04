@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "model": "gemma3:1b",
+  "summary": "Neil Armstrong and Buzz Aldrin remained in orbit on July 24th, 1969, under the leadership of Richard Nixon.",
+  "messages": [
+    {
+      "role": "user",
+      "content": "did he initialized NASA?"
+    },
+    {
+      "role": "assistant",
+      "content": "Yes, Richard Nixon did initialize NASA. He established the Advanced Astronautics Program in 1965, which laid the groundwork for NASA’s future."
+    },
+    {
+      "role": "user",
+      "content": "before him, no space program for the US?"
+    },
+    {
+      "role": "assistant",
+      "content": "That’s correct. Before Nixon, the United States had no significant space program."
+    }
+  ]
+}
