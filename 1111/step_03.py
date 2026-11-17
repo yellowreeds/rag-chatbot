@@ -312,7 +312,7 @@ def persistent_chat(path, memory_panel=None, select_facts=None):
         st.rerun()
 
     if st.sidebar.button("Reset conversation"):
-        save_change(Memory(facts=memory.facts), clear_chat=True)
+        save_change(Memory(), clear_chat=True)
     if memory_panel is not None:
         memory_panel(memory, save_change)
 

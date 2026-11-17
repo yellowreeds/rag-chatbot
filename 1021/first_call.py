@@ -1,11 +1,15 @@
 import ollama
 
-response = ollama.chat(
-   model="gemma3:1b",
-   messages=[
-       {"role": "user",
-        "content": "Say hello in one sentence."}
-   ],
-)
+MODEL = "gemma3:1b"
 
-print(response.message.content)
+
+def main():
+    response = ollama.chat(
+        model=MODEL,
+        messages=[{"role": "user", "content": "Say hello in one sentence."}],
+    )
+    print(response.message.content)
+
+
+if __name__ == "__main__":
+    main()

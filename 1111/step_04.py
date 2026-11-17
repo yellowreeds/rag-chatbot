@@ -16,7 +16,7 @@ FACT_LABELS = {
 
 def show_saved_memories(memory, save_change):
     with st.sidebar.expander("Saved memories", expanded=True):
-        st.caption("Replacing or deleting a fact also resets the conversation so old turns cannot supply it.")
+        st.caption("Saved facts are separate from the conversation history.")
         for key, label in FACT_LABELS.items():
             current = memory.facts.get(key, "")
             st.write(f"**{label}**")
@@ -39,8 +39,7 @@ def show_saved_memories(memory, save_change):
                 del facts[key]
             else:
                 facts[key] = value
-            updated = Memory(facts=facts) if current else replace(memory, facts=facts)
-            save_change(updated, clear_chat=bool(current))
+            save_change(replace(memory, facts=facts))
 
 
 def step_04_chat():

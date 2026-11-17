@@ -1,44 +1,33 @@
 import ollama
 
 MODEL = "gemma3:1b"
-messages = [
-    {
-        "role": "system",
-        "content": "Be helpful and concise."
-    }
-]
 
-print("Local Chatbot — type exit to quit")
 
-while True:
-    prompt = input("\nYou: ").strip()
+def main():
+    messages = [{"role": "system", "content": "Be helpful and concise."}]
+    print("Local Chatbot — type exit to quit")
 
-    if prompt.lower() in {"exit", "quit"}:
-        break
+    while True:
+        prompt = input("\nYou: ").strip()
 
-    if not prompt:
-        continue
+        if prompt.lower() in {"exit", "quit"}:
+            break
+        if not prompt:
+            continue
 
-    messages.append({
-        "role": "user",
-        "content": prompt
-    })
+        messages.append({"role": "user", "content": prompt})
 
-    try:
-        response = ollama.chat(
-            model=MODEL,
-            messages=messages
-        )
-        answer = response.message.content
+        try:
+            response = ollama.chat(model=MODEL, messages=messages)
+            answer = response.message.content
+        except Exception as error:
+            messages.pop()
+            print(f"\nRequest failed: {error}")
+            continue
 
-    except Exception as error:
-        messages.pop()
-        print(f"\nRequest failed: {error}")
-        continue
+        print(f"\nAssistant: {answer}")
+        messages.append({"role": "assistant", "content": answer})
 
-    print(f"\nAssistant: {answer}")
 
-    messages.append({
-        "role": "assistant",
-        "content": answer
-    })
+if __name__ == "__main__":
+    main()

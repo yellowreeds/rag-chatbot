@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "model": "llama3.1:latest",
+  "summary": "",
+  "messages": [
+    {
+      "role": "user",
+      "content": "how you doin"
+    },
+    {
+      "role": "assistant",
+      "content": "I'm doin' well, thanks for askin'. How about you?"
+    },
+    {
+      "role": "user",
+      "content": "what is the project framework?"
+    },
+    {
+      "role": "assistant",
+      "content": "The project framework is Python."
+    },
+    {
+      "role": "user",
+      "content": "What is current project framework?"
+    },
+    {
+      "role": "assistant",
+      "content": "The current project framework is Streamlit."
+    },
+    {
+      "role": "user",
+      "content": "what is the current project framework?"
+    },
+    {
+      "role": "assistant",
+      "content": "You didn't mention the current project framework earlier. I don't know what the current project framework is."
+    }
+  ],
+  "facts": {}
+}
