@@ -1,0 +1,10 @@
+streamlit>=1.36
+ollama>=0.6
+pypdf>=5
+python-docx>=1.1
+olefile>=0.47
+easyocr>=1.7.2
+pymupdf>=1.24
+Pillow>=10
+numpy>=1.26
+openpyxl>=3.1
